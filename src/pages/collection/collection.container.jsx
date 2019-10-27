@@ -27,9 +27,6 @@ export default function CollectionPageContainer({ match }) {
       variables={{ title: match.params.collectionId }}
     >
       {({ loading, error, data }) => {
-        console.log({ loading });
-        console.log({ error });
-        console.log({ data });
         if (loading) return <Spinner />;
         return <CollectionPage collection={data.getCollectionsByTitle} />;
       }}
